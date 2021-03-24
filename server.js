@@ -13,7 +13,7 @@ const image = require('./Controllers/image');
 const db = require('knex')({
     client: 'pg',
     connection: {
-      host : process.env.DATABASE_URL, //modify according to hosted platform
+      connectionString: process.env.DATABASE_URL, //modify according to hosted platform
       ssl: true
     }
   });
