@@ -13,7 +13,7 @@ const image = require('./Controllers/image');
 const db = require('knex')({
     client: 'pg',
     connection: {
-      host : '127.0.0.1', //modify according to hosted platform
+      host : 'postgresql-cubed-67215', //modify according to hosted platform
       user : 'postgres',
       password : 'postgres',
       database : 'smart_brain'
