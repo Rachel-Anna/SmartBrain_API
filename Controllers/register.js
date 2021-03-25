@@ -2,7 +2,7 @@
 
 //REGISTER
 const handleRegister = (db, bcrypt) => (req, res ) => {
-    console.log('register is working')
+    
     const { email, name, password } = req.body;
     const hash = bcrypt.hashSync(password);
         db.transaction(trx => {

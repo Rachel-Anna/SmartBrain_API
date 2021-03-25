@@ -12,11 +12,20 @@ const image = require('./Controllers/image');
 
 const db = require('knex')({
     client: 'pg',
+    version: '7.2',
+    // connection: {
+    //   connectionString: process.env.DATABASE_URL, //modify according to hosted platform
+    //   ssl: {
+    //     rejectUnauthorized: false
+    //   }
+    // }
     connection: {
-      connectionString: process.env.DATABASE_URL, //modify according to hosted platform
-      ssl: true
-    }
-  });
+      host : '127.0.0.1', //modify according to hosted platform
+      user : 'postgres',
+      password : 'postgres',
+      database : 'smart_brain'
+  }
+});
 
 
   const app = express();
@@ -32,7 +41,7 @@ const db = require('knex')({
 
 
   
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3001;
   app.listen(port, () => { console.log(`App is running on port ${port}`) })
 //knex is referring to the object we made in line 5
 // db.select("*").from('users').then(data => {
