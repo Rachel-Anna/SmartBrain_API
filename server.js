@@ -31,7 +31,7 @@ const db = require('knex')({
   app.post('/register', register.handleRegister(db, bcrypt));
   //app.get('/profile/:id', profile.handleProfileGet(db));
   app.put('/image', image.handleImage(db));
-  app.post('/image-url', image.handleApiCall);
+  app.post('/imageurl', image.handleApiCall);
 
 
   
