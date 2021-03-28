@@ -11,16 +11,15 @@ const image = require('./Controllers/image');
 
 
 const db = require('knex')({
-    client: 'pg',
-    version: '7.2',
-    connection: {
-      connectionString: process.env.DATABASE_URL, //modify according to hosted platform
-      ssl: {
-        rejectUnauthorized: false
-      }
-    }
+  client: 'pg',
+  version: '7.2',
+  connection: {
+    host : '127.0.0.1', //modify according to hosted platform
+    user : 'postgres',
+    password : 'postgres',
+    database : 'smart_brain'
+}
 });
-
 
   const app = express();
   app.use(bodyParser.json({limit: '3500kb', extended: true}));
